@@ -1,0 +1,40 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.app__nav {
+    width: 100%;
+    flex: .1;
+    background: #522B14;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.app__content {
+    flex: .8;
+}
+
+.app__link {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: .5;
+    transition: all ease .2s;
+    letter-spacing: 2px;
+    font-family: "Secular One", sans-serif;
+}
+
+.app__link:hover {
+    opacity: 1;
+}
+
+.app__title {
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 6px;
+    font-family: "Secular One", sans-serif;
+    font-size: 1.2rem;
+}
