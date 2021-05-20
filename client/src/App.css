@@ -8,19 +8,20 @@
 .app__nav {
     width: 100%;
     flex: .1;
-    background: #522B14;
+    background: #EFD0BD;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    opacity: .9;
 }
 
 .app__content {
-    flex: .8;
+    flex: .9;
 }
 
 .app__link {
     text-decoration: none;
-    color: #ffffff;
+    color: #522B14;
     opacity: .5;
     transition: all ease .2s;
     letter-spacing: 2px;
@@ -33,7 +34,7 @@
 
 .app__title {
     text-decoration: none;
-    color: #ffffff;
+    color: #522B14;
     letter-spacing: 6px;
     font-family: "Secular One", sans-serif;
     font-size: 1.2rem;
