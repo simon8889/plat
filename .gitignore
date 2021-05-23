@@ -46,6 +46,7 @@ server/.nyc_output
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 server/.grunt
+server/templates
 
 # Bower dependency directory (https://bower.io/)
 server/bower_components
