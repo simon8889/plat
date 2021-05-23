@@ -83,3 +83,7 @@ server/.env
 
 # next.js build output
 server/.next
+
+server/templates
+
+assets/
