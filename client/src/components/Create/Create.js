@@ -1,28 +1,57 @@
 import React, { useState } from 'react'
 import { useDropzone } from 'react-dropzone'
+import { createTemp } from '../../api.js'
+import { useSnackbar } from "notistack"
 import "./Create.css"
 
 const Create = () => {
-    const [files, setFiles] = useState([])
+    const [file, setFile] = useState(undefined)
     const [templateInfo, setTemplateInfo] = useState({
         name: "",
         author: ""
     })
     
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar()
+    
+    const errorSnackbar = {
+        autoHideDuration: 2000,
+        className: "create__snackbarCreateError"
+    }
+    
+    const createdSnackBar = {
+        autoHideDuration: 3000,
+        className: "create__snackbarTemplateCreated"
+    }
+
     const { getRootProps, getInputProps }  = useDropzone({
         accept: ".html",
         maxFiles: 1,
         maxSize: 5242880,
         onDrop: (acceptedFiles) => {
-            setFiles(acceptedFiles.map((file) => Object.assign(file, {
-                    preview: URL.createObjectURL(file)
-                })
-            ))
+            const [uploadedFile] = acceptedFiles
+            setFile(uploadedFile)
         }
     })
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
+        
+        if (templateInfo.name.length === 0 || templateInfo.author.length === 0 || file === undefined) return enqueueSnackbar("All fields must be complete.", errorSnackbar)
+
+        const tempData = new FormData()
+        tempData.append("name", templateInfo.name)
+        tempData.append("author", templateInfo.author)
+        tempData.append("file", file)
+        
+        createTemp(tempData)
+            .then(data => enqueueSnackbar("Template created.", createdSnackBar))
+            .catch(err => enqueueSnackbar("All fields must be complete.", errorSnackbar))
+        
+        setFile(undefined)
+        setTemplateInfo({
+            name: "",
+            author: ""
+        })
     }
     
     return (
@@ -48,24 +77,25 @@ const Create = () => {
                         
                         <div { ...getRootProps() } className="create__dragNdrop">
                             
-                            <input { ...files.length === 0 ? { ...getInputProps() } : null } style={ {display: "none"} } />
+                            <input {  ...file === undefined ? { ...getInputProps() } : null } style={ {display: "none"} } />
                             
                             { 
-                            files.length === 0 ? 
+                            file === undefined ? 
                                 (<p>Drop your html here.</p>) 
                             : 
                                 (
                                     <div className="create__fileOptions">
-                                        <div> { files.map(file => (<p key={file.name}>{file.name}</p>)) } </div>
+                                        <div> 
+                                            <p>{ file.name }</p> 
+                                        </div>
                                         <div className="create__clearFiles">
-                                            <p onClick={() => setFiles([])} className="create__clearFilesText">Clear</p>
-                                            <a target="_blank" href={files.map(file => file.preview)} className="create__clearFilesText">Preview</a>
+                                            <p onClick={() => setFile(undefined)} className="create__clearFilesText">Clear</p>
+                                            <a rel="noreferrer" target="_blank" href={ URL.createObjectURL(file) } className="create__clearFilesText">Preview</a>
                                         </div>
                                     </div>
                                 )
                             }
                         </div>
-                        
                     </div>
                     <input type="submit" value="Create Template" className="create__submit"/>
                 </form>

@@ -82,6 +82,7 @@
     border-radius: 5px;
     cursor: pointer;
     border: 5px dashed #6d67db79;
+    opacity: .7;
     width: 60%;
     height: 100%;
     text-align: center;
@@ -95,6 +96,7 @@
 .create__dragNdrop:hover {
     border: 5px solid #6d67db;
     font-size: 1.7rem;
+    opacity: 1;
 }
 
 .create__invisibleInput {
@@ -150,11 +152,12 @@
     font-family: "Roboto Condensed", sans-serif;
     font-size: 1.1rem; 
     cursor: pointer;
+    opacity: .7;
     transition: all ease .5s;
 }
 
 .create__submit:hover {
-    font-size: 1.2rem;
+    opacity: 1;
 }
 
 .create__formInput {
@@ -189,3 +192,16 @@
     font-size: 1.3rem;
 }
 
+.create__snackbarCreateError {
+    background-color: #310d20af !important;
+    font-family: "Roboto Condensed", sans-serif !important;
+    font-size: 1.3rem !important;
+    color: #ffffff !important;
+}
+
+.create__snackbarTemplateCreated {
+    background-color: #719255c0 !important;
+    font-family: "Roboto Condensed", sans-serif !important;
+    font-size: 1.3rem !important;
+    color: #ffffff !important;
+}

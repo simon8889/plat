@@ -1,10 +1,10 @@
 import express from 'express'
 
-import { defaultRoute } from "../controllers/index.js"
-
+import upload from '../controllers/upload.js'
 
 const router = express.Router()
 
-router.get('/', defaultRoute)
+router.post('/create', upload)
 
 export default router
+
