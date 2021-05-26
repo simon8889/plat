@@ -5,7 +5,7 @@ import "./Home.css"
 const Home = () => {
     return (
         <div className="home">
-            <div className="circle green"></div>
+            <div className="circle home__decorator"></div>
             <div className="home__info">
                 <p>
                     Create

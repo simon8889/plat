@@ -1,6 +1,7 @@
 import multer from 'multer'
 import path from "path"
 import Template from '../models/Template.js'
+import colorsList from "../colors.js"
 
 const randomString = (length) => {
     let result = [];
@@ -34,9 +35,11 @@ export default (req, res) => {
         const tempData = {
             name: req.body.name,
             author: req.body.author,
-            filename: req.file.originalname,
+            fileName: req.file.originalname,
             serverStorageFileName: req.file.filename,
-            filePath: req.file.path
+            filePath: req.file.path,
+            background: colorsList[Math.floor(Math.random() * colorsList.length)]
+
         }
         
         new Template(tempData).save()

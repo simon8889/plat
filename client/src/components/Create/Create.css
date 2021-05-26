@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.blue {
+.create__decorator {
     z-index: 250;
     background-color: #cccbe2cc;
     right: -40%;

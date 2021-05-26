@@ -28,6 +28,11 @@ const template = new mongoose.Schema({
     filePath: {
         type: String,
         require: true
+    },
+    background: {
+        type: String,
+        require: true,
+        default: "#8d9990"
     }
 })
 

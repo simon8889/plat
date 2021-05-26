@@ -11,7 +11,7 @@ const Create = () => {
         author: ""
     })
     
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar()
+    const { enqueueSnackbar } = useSnackbar()
     
     const errorSnackbar = {
         autoHideDuration: 2000,
@@ -56,7 +56,7 @@ const Create = () => {
     
     return (
         <div className="create">
-            <div className="circle blue"></div>
+            <div className="circle create__decorator"></div>
             <div className="create__instructions">
                 <h2 className="create__title">Create</h2>
                 <p>create your html file, decorate it with a style tag, add interactivity with javascript inside a script tag, fill the paragraphs and titles with lorem texts and finally share it with a name and an author. (max 5MB)</p>
