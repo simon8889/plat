@@ -65,7 +65,7 @@ const TemplateCard = ({ template }) => {
                     <p>Download { template.fileName }</p>
                 </div>
                 <h2>{ template.name }</h2>
-                <p>Click to preview {template.fileName}.</p>
+                <p className="templateCard__responsivePreview">Click to preview {template.fileName}.</p>
             </div>
             <div className="templateCard__descContainer">
                 <div className="templateCard__desc">

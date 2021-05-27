@@ -32,7 +32,7 @@
     transition: all ease .3s;
 }
 
-.templateCard__title p {
+.templateCard__responsivePreview {
     display: none;
 }
 
@@ -161,7 +161,7 @@
         margin-top: 0;
     }
     
-    .templateCard__title p {
+    .templateCard__responsivePreview {
         display: block;
     }
 }
