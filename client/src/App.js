@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom" 
+import { Route, HashRouter as Router, Switch, Link, HashRouter } from "react-router-dom" 
 import { SnackbarProvider } from 'notistack'
 import './App.css';
 
@@ -11,7 +11,7 @@ function App() {
     const snackBarPositon = { vertical: 'bottom', horizontal: 'right'}
     
     return (
-        <Router>
+        <HashRouter>
             <SnackbarProvider anchorOrigin={ snackBarPositon } maxSnack={3} >
                 <div className="app">
                     <nav className="app__nav">
@@ -40,7 +40,7 @@ function App() {
                     </div>
                 </div>
             </SnackbarProvider>
-        </Router>
+        </HashRouter>
     )
 }
 
