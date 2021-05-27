@@ -176,3 +176,29 @@
         box-shadow: 0 2.5em 0 0;
     }
 }
+
+@media (max-width: 800px) {
+    .explore__info {
+        margin-top: 10px;
+        height: fit-content;
+    }
+    
+    .explore__info form {
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .explore__search {
+        width: 100%;
+        margin: 10px;
+    }
+    
+    .explore__searchSubmit {
+        width: 40%;
+    }
+    
+    .explore__searchClear {
+        width: 20%;
+    }
+}

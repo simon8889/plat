@@ -90,6 +90,7 @@ const Create = () => {
                                         </div>
                                         <div className="create__clearFiles">
                                             <p onClick={() => setFile(undefined)} className="create__clearFilesText">Clear</p>
+                                            <p className="create__responsiveFileName">{ file.name }</p>
                                             <a rel="noreferrer" target="_blank" href={ URL.createObjectURL(file) } className="create__clearFilesText">Preview</a>
                                         </div>
                                     </div>

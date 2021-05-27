@@ -21,8 +21,8 @@
     padding: 40px;
     text-align: left;
     display: grid;
-    place-items: center;
     font-size: 5rem;
+    place-items: center;
     font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -64,4 +64,30 @@
 
 .home__linkButton:hover {
     opacity: .7;
+}
+
+@media (max-width: 800px) {
+    
+    .home {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    
+    .home__info {
+        font-size: 3rem;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .home__desc {
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .home__linkButton {
+        font-size: 1.2rem;
+        width: 45%;
+        margin: 20px;
+    }
+    
 }

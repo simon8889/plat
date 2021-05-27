@@ -19,7 +19,7 @@
 .create__instructions {
     z-index: 500;
     padding: 40px;
-    flex: .4;
+    width: 40%;
     display: flex;    
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@
 .create__form {
     padding: 40px;
     z-index: 500;
-    flex: .4;
+    width: 40%;
     height: 100%;
 }
 
@@ -204,4 +204,59 @@
     font-family: "Roboto Condensed", sans-serif !important;
     font-size: 1.3rem !important;
     color: #ffffff !important;
+}
+
+.create__responsiveFileName {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    
+    .create {
+        overflow-y: scroll;
+        display: block;
+    }
+    
+    .create__instructions {
+        height: 50%;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 10px 0;
+    }
+    
+    .create__form {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .create__form form {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .create__submit {
+        width: 60%;
+    }
+    
+    .create__fileInput {
+        box-sizing: content-box;
+        height: 30%;
+        width: 70%;
+    }
+    
+    .create__dragNdrop {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .create__clearFiles {
+        opacity: 1;
+        background: #6d67db;
+    }
+
+    .create__responsiveFileName {
+        display: block;
+        color: #000000;
+    }
 }

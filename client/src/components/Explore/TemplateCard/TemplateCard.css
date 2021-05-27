@@ -32,6 +32,10 @@
     transition: all ease .3s;
 }
 
+.templateCard__title p {
+    display: none;
+}
+
 .templateCard__preview {
     position: absolute;
     display: grid;
@@ -127,4 +131,37 @@
     font-family: "Roboto Condensed", sans-serif !important;
     font-size: 1.3rem !important;
     color: #ffffff !important;
+}
+
+@media (max-width: 800px) {
+    .templateCard {
+        width: 80%;
+        height: 1%;
+    }
+    
+    .templateCard__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .templateCard__title h2 {
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    .templateCard__title:hover > .templateCard__preview {
+        margin-top: 0;
+        opacity: 0;
+    }
+
+    .templateCard__downloadDesc--view {
+        opacity: 0;
+        margin-top: 0;
+    }
+    
+    .templateCard__title p {
+        display: block;
+    }
 }
