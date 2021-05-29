@@ -10,18 +10,6 @@ export const getTemplates = (req, res) => {
         .catch(err => res.status(500).json({ error: true }))
 } 
 
-export const getFile = async (req, res) => {
-    const id = req.params.id;
-    try {
-        const temp = await Template.findById(id)
-        res.set({ 'Content-Type': 'text/html' })
-        res.sendFile(path.join(__dirname, '..',temp.filePath))
-    }
-    catch(err) {
-        res.status(404).send("resource not found")
-    }
-}
-
 export const downloadAdd = (req, res) => {
     const id = req.params.id
     Template.findByIdAndUpdate(id, {$inc: { downloadCount: 1 }})

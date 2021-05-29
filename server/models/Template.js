@@ -21,18 +21,18 @@ const template = new mongoose.Schema({
         type: String,
         require: true
     },
-    serverStorageFileName: {
-        type: String,
-        require: true
-    },
-    filePath: {
-        type: String,
-        require: true
-    },
     background: {
         type: String,
         require: true,
         default: "#8d9990"
+    },
+    resourceId: {
+        type: String, 
+        require: true
+    },
+    resourceUrl: {
+        type: String, 
+        require: true
     }
 })
 

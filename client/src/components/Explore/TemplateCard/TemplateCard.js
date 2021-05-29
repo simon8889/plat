@@ -25,7 +25,7 @@ const TemplateCard = ({ template }) => {
     
     const handlePreview = async () => {
         try{
-            const file = await getFile(template._id)
+            const file = await getFile(template.resourceUrl)
             const doc = new File([file.data], "template.html", {type: file.headers["content-type"]})
             window.open(URL.createObjectURL(doc))
         } 
@@ -36,7 +36,7 @@ const TemplateCard = ({ template }) => {
     
     const  handleDownload = async () => {
         try{
-            const file = await getFile(template._id)
+            const file = await getFile(template.resourceUrl)
             download(file.data, template.fileName, "text/html")
             const addDownloadCount = await addDownload(template._id)
             console.log(addDownloadCount)
