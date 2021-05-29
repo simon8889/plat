@@ -54,7 +54,7 @@ export default (req, res) => {
                 author: req.body.author,
                 fileName: req.file.originalname,
                 resourceId: result.public_id,
-                resourceUrl: result.url,
+                resourceUrl: result.secure_url,
                 background: colorsList[Math.floor(Math.random() * colorsList.length)]
             }
             
