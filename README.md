@@ -8,6 +8,10 @@ in plat you download and upload only the html file, if you want you can add a st
 
 you can create, share an get your templates now in [Plat](https://simon8889.github.io/plat/#/)
 
+plat has  two versions, one for storage the templates in local server and other for storage the templates in cloud.
+
+for production plat uses the cloud version, server is deployed in heroku, the templates are stored in cloudinary and frontend run in github pages, plat is completly made with MERN stack.
+
 contribute to plat!
 
 :)
